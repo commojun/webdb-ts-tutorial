@@ -1,0 +1,23 @@
+{
+  "name": "webdb-ts-tutorial",
+  "version": "1.0.0",
+  "description": "WEB+DB pressのTypeScript入門記事をやってみる",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/commojun/webdb-ts-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/commojun/webdb-ts-tutorial/issues"
+  },
+  "homepage": "https://github.com/commojun/webdb-ts-tutorial#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
+}
