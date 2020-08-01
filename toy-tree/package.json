@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "meow": "^7.0.1"
+  },
+  "bin": {
+    "toy-tree": "src/bin.js"
+  }
 }
