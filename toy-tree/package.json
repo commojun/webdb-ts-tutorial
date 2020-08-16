@@ -1,19 +1,27 @@
 {
-  "name": "toy-tree",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "jest": {
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "chalk": "^4.1.0",
-    "meow": "^7.0.1"
+  "devDependencies": {
+    "jest": "^26.4.0"
   },
   "bin": {
     "toy-tree": "src/bin.js"
-  }
+  },
+  "dependencies": {
+    "meow": "^7.0.1",
+    "chalk": "^4.1.0"
+  },
+  "license": "ISC",
+  "author": "",
+  "keywords": [],
+  "scripts": {
+    "test": "jest"
+  },
+  "main": "index.js",
+  "description": "",
+  "version": "1.0.0",
+  "name": "toy-tree"
 }
