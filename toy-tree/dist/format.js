@@ -27,6 +27,8 @@ const displayName = (node) => {
             return node.name;
         case 'directory':
             return chalk_1.default.cyan(node.name);
+        case 'symlink':
+            return `${chalk_1.default.green(node.name)} -> ${chalk_1.default.cyan(node.link)}`;
     }
 };
 //# sourceMappingURL=format.js.map

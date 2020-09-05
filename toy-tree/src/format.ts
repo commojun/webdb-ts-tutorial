@@ -25,9 +25,11 @@ const formatEach = (nodes: TreeNode[], prefix: string) => {
 
 const displayName = (node: TreeNode) => {
   switch (node.type) {
-  case 'file':
-    return node.name;
-  case 'directory':
-    return chalk.cyan(node.name);
+    case 'file':
+      return node.name;
+    case 'directory':
+      return chalk.cyan(node.name);
+    case 'symlink':
+      return `${chalk.green(node.name)} -> ${chalk.cyan(node.link)}`;
   }
 };

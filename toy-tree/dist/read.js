@@ -51,6 +51,13 @@ const readDirectory = (dir, depth, options) => {
                 children: readDirectory(path_1.default.join(dir, dirent.name), depth + 1, options),
             });
         }
+        else if (dirent.isSymbolicLink()) {
+            nodes.push({
+                type: 'symlink',
+                name: dirent.name,
+                link: fs_1.default.readlinkSync(path_1.default.join(dir, dirent.name)),
+            });
+        }
     });
     return nodes;
 };
