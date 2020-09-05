@@ -1,5 +1,10 @@
 "use strict";
-const chalk = require('chalk');
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.format = void 0;
+const chalk_1 = __importDefault(require("chalk"));
 exports.format = (node) => {
     return `${node.name}\n${formatEach(node.children, '')}`;
 };
@@ -21,7 +26,7 @@ const displayName = (node) => {
         case 'file':
             return node.name;
         case 'directory':
-            return chalk.cyan(node.name);
+            return chalk_1.default.cyan(node.name);
     }
 };
 //# sourceMappingURL=format.js.map

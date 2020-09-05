@@ -1,10 +1,15 @@
 "use strict";
-const fs = require('fs');
-const path = require('path');
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.read = void 0;
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 exports.read = (dir, options) => {
     let stat;
     try {
-        stat = fs.statSync(dir);
+        stat = fs_1.default.statSync(dir);
     }
     catch (e) {
         throw new Error(`"${dir}" does not exist.`);
@@ -25,7 +30,7 @@ const readDirectory = (dir, depth, options) => {
     if (options.level < depth) {
         return [];
     }
-    const dirents = fs.readdirSync(dir, {
+    const dirents = fs_1.default.readdirSync(dir, {
         withFileTypes: true,
     });
     const nodes = [];
@@ -43,7 +48,7 @@ const readDirectory = (dir, depth, options) => {
             nodes.push({
                 type: 'directory',
                 name: dirent.name,
-                children: readDirectory(path.join(dir, dirent.name), depth + 1, options),
+                children: readDirectory(path_1.default.join(dir, dirent.name), depth + 1, options),
             });
         }
     });

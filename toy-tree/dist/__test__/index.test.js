@@ -1,9 +1,10 @@
 "use strict";
-const { main } = require('../');
+Object.defineProperty(exports, "__esModule", { value: true });
+const __1 = require("../");
 describe('toy-tree', () => {
     let stdout;
     let stderr;
-    const exec = (argv) => main(argv, stdout, stderr);
+    const exec = (argv) => __1.main(argv, stdout, stderr);
     beforeEach(() => {
         stdout = jest.fn();
         stderr = jest.fn();

@@ -1,9 +1,14 @@
 "use strict";
-const meow = require('meow');
-const { read } = require('./read');
-const { format } = require('./format');
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.main = void 0;
+const meow_1 = __importDefault(require("meow"));
+const read_1 = require("./read");
+const format_1 = require("./format");
 exports.main = (argv, stdout, stderr) => {
-    const cli = meow(`
+    const cli = meow_1.default(`
 Usage
   $toy-tree <directory>
 
@@ -30,13 +35,13 @@ Examples
     }
     let root;
     try {
-        root = read(dir, options);
+        root = read_1.read(dir, options);
     }
     catch (e) {
         stderr(`Error: ${e.message}`);
         return 1;
     }
-    const output = format(root);
+    const output = format_1.format(root);
     stdout(output);
     return 0;
 };

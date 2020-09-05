@@ -1,15 +1,16 @@
 "use strict";
-const { format } = require('../format');
+Object.defineProperty(exports, "__esModule", { value: true });
+const format_1 = require("../format");
 describe('format', () => {
     test('only root', () => {
-        expect(format({
+        expect(format_1.format({
             type: 'directory',
             name: 'root',
             children: [],
         })).toMatchSnapshot();
     });
     test('nest', () => {
-        expect(format({
+        expect(format_1.format({
             type: 'directory',
             name: 'root',
             children: [

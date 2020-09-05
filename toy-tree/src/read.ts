@@ -1,8 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import { Options, TreeNode, DirectoryNode } from './types';
+import fs from 'fs';
+import path from 'path';
 
-exports.read = (dir, options) => {
-  let stat;
+export const read = (dir: string, options: Options) => {
+  let stat: fs.Stats;
 
   try {
     stat = fs.statSync(dir);
@@ -13,7 +14,7 @@ exports.read = (dir, options) => {
     throw new Error(`"${dir}" can't be opened as a directory.`);
   }
 
-  const root = {
+  const root: DirectoryNode = {
     type: 'directory',
     name: dir,
     children: readDirectory(dir, 1, options),
@@ -22,7 +23,7 @@ exports.read = (dir, options) => {
   return root;
 };
 
-const readDirectory = (dir, depth, options) => {
+const readDirectory = (dir: string, depth: number, options: Options) => {
   // -Lオプションと現在の階層を比較して、
   // 読み取り不要となったタイミングで才気を中止する
   if (options.level < depth) {
@@ -33,7 +34,7 @@ const readDirectory = (dir, depth, options) => {
     withFileTypes: true,
   });
 
-  const nodes = [];
+  const nodes: TreeNode[] = [];
 
   dirents.forEach((dirent) => {
     if(dirent.name.startsWith('.')) {
